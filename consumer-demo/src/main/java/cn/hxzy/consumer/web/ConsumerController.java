@@ -14,7 +14,6 @@ public class ConsumerController {
 
     @GetMapping("{id}")
     public User queryById(@PathVariable("id") Long id) {
-        System.out.println("----");
         String url = "http://localhost:8081/user/" + id;
         return this.restTemplate.getForObject(url, User.class);
     }
